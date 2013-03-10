@@ -1,0 +1,64 @@
+<%= render 'flash_messages' %>
+
+<div id="tablamostrar">
+	
+	<% if @datos.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@datos.errors.count, "error") %> prohibited this live from being saved:</h2>
+
+      <ul>
+      <% @datos.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+    <% end %>
+
+<p>
+  <b>Arquitectura:</b>
+  <%= @datos.arch %>
+</p>
+
+<p>
+  <b>Area:</b>
+  <%= @datos.area %>
+</p>
+
+<p>
+  <b>Distro:</b>
+  <%= @datos.distro %>
+</p>
+<p>
+  <b>Debian installer:</b>
+  <%= @datos.di %>
+</p>
+<p>
+  <b>Desktop:</b>
+  <%= @datos.desktop%>
+</p>
+<p>
+  <b>Sistema de archivos:</b>
+  <%= @datos.filesystem%>
+</p>
+<p>
+  <b>Repositorio:</b>
+  <%= @datos.repoextra%>
+</p>
+<p>
+  <b>Nombre de la iso:</b>
+  <%= @datos.nombreiso%>
+</p>
+</div>
+
+<p>
+  <b>Resultado de envio:</b>
+  <ul>
+        <li><%= @serverlive %></li>
+  </ul>
+</p>
+</div>
+
+<p>
+ <%=link_to "Volver", :controller => "lihuen", :action => "home"%>
+</p>
+

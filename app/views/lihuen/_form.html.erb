@@ -1,0 +1,56 @@
+<%= form_for @live, :url => url_for(:controller => 'work', :action => 'generate'), :html=> {:method => :post} do |cd| %>
+  <% if @live.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@live.errors.count, "error") %> prohibited this live from being saved:</h2>
+
+      <ul>
+      <% @live.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= cd.label :Arquitectura %><br />
+    <%= cd.text_field :arch %>
+  </div>
+  <div class="field">
+    <%= cd.label :Areas %><br />
+    <%= cd.text_field :area %>
+  </div>
+  <div class="field">
+    <%= cd.label :Distribución %><br />
+    <%= cd.text_field :distro %>
+  </div>
+    
+  <div class="field">
+    <%= cd.label :Desktop %><br />
+    <%= cd.text_field :desktop %>
+  </div>
+  
+ <div class="field">
+ 	
+    <%= cd.label :"Sistema de archivo" %>
+    <%= cd.text_field :filesystem %>
+   
+ </div>
+  
+  <div class="field">
+    <%= cd.label :"Repositorio Extra" %><br />
+    <%= cd.text_field :repoextra %>
+  </div>
+  <div class="field">
+    <%= cd.label :"Nombre de la iso" %><br />
+    <%= cd.text_field :nombreiso %>
+  </div>
+  <div class="installerlabel">
+    <%= cd.label :"Debian installer"%>
+    <%= cd.check_box :di, {}, true, false%>
+  </div>
+  <br />
+
+  <div class="actions">
+    <%= cd.submit "Generar Live"%>
+  </div>
+<% end %>

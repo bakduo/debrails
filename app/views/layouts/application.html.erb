@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Lihuen</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+<div class="container">
+	
+    <div class="header">
+        <h1>Generacion de lives CDs Debian</h1>
+    </div>	
+    
+ 	<div class="mainbody">
+    
+		<%= yield %>
+  
+    </div>
+     
+    <div class="footer">
+    	<h1>Se distribuye bajo Licencia GNU</h1>
+    </div>
+    
+</div> 
+
+</body>
+</html>

@@ -1,9 +1,13 @@
+gitconfig.sh
 *.rbc
 *.sassc
 .sass-cache
 capybara-*.html
 .rspec
 /.bundle
+*.swp
+*~
+doc/
 /vendor/bundle
 /log/*
 /tmp/*
@@ -14,3 +18,4 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+db/schema.rb
